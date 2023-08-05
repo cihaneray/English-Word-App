@@ -1,9 +1,9 @@
 import json
-
-from customtkinter import *
-from CTkListbox import *
 from random import randint
+
+from CTkListbox import *
 from CTkMessagebox import CTkMessagebox
+from customtkinter import *
 
 
 class App:
@@ -127,7 +127,8 @@ class App:
         self.list_box = CTkListbox(self.frame_list, command=self.show_sentence)
         self.list_box.place(relx=0.07, relwidth=0.86,
                             rely=0.1, relheight=0.86)
-        self.list_box.insert(0, "Please type in search!")
+        self.list_box.insert(0, "Type longer than 2 letters to search!")
+        self.list_box.select(0)
 
         self.search_entry = CTkEntry(self.frame_list, textvariable=StringVar())
         self.search_entry.place(relx=0.07, relwidth=0.49,
@@ -195,13 +196,19 @@ class App:
 
     def search(self):
         search_text = self.search_entry.get().lower()
-        word_list = self.word_class.get_word_list()
-        searched_word_list = []
-        self.clear()
-        for i in word_list:
-            if search_text in i:
-                searched_word_list.append(i)
-        self.__insert__(searched_word_list)
+        if len(search_text) >= 2:
+            word_list = self.word_class.get_word_list()
+            searched_word_list = []
+            self.clear()
+            for i in word_list:
+                if search_text in i:
+                    searched_word_list.append(i)
+            if len(searched_word_list) != 0:
+                self.__insert__(searched_word_list)
+            else:
+                self.__insert__(["No words found."])
+        else:
+            pass
 
     @staticmethod
     def center_window(master, width: int, height: int):
@@ -212,12 +219,14 @@ class App:
         return f"{width}x{height}+{x_coordinate + 100}+{y_coordinate}"
 
     def show_sentence(self, word):
-        if word != "Please type in search!":
+        if word not in ["Type longer than 2 letters to search!", "No words found."]:
             sentence = self.sentence_list[word][0]
             mean = self.sentence_list[word][1]
             # noinspection PyProtectedMember
             CTkMessagebox(title=f"{word.capitalize()}", message=f"Mean: {mean}\nSentence: {sentence}",
                           icon="none", width=500, border_color="green").info._text_label.configure(wraplength=480)
+        else:
+            pass
 
     def play_crossword(self):
         self.crossword_initial_frame.place_forget()
