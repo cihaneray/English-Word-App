@@ -1,6 +1,8 @@
 # English Word App
 ## About
 This project is an application where users can save the words they have learned and play a fun game that will help them learn vocabulary. Json is used to store data.
+[This database](https://www.ef.com/wwen/english-resources/english-vocabulary/top-3000-words/) used to as game database. 
+The words were translated from English to Turkish via python with the googletrans package.
 ## Libraries
 - customtkinter
 - CTkListbox
@@ -18,5 +20,5 @@ This project is an application where users can save the words they have learned 
 ## Installation
 1. Clone the repository to your local machine: `git clone link`
 2. Navigate to the project directory: `cd English-Word-App\english_app`
-3. Install the necessary dependencies: `pip install -r requirements.txt`
+3. Install the necessary dependencies: ```pip install -r requirements```
 4. Start the application: `python english_app.py`  
