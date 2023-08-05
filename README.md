@@ -18,7 +18,7 @@ The words were translated from English to Turkish via python with the googletran
 - Python 3.x should be installed. (Preferably the 3.11 version)
 - Use [requirements](english_app/requirements) to install other dependencies.
 ## Installation
-1. Clone the repository to your local machine: `git clone link`
+1. Clone the repository to your local machine: `git clone https://github.com/cihaneray/English-Word-App`
 2. Navigate to the project directory: `cd English-Word-App\english_app`
 3. Install the necessary dependencies: ```pip install -r requirements```
 4. Start the application: `python english_app.py`  
