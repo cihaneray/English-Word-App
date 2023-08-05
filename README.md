@@ -14,7 +14,7 @@ This project is an application where users can save the words they have learned 
 - You can edit word that you saved before by entering the same word with "different meaning or sentence".
 ## Requirements
 - Python 3.x should be installed. (Preferably the 3.11 version)
-- Use `requirements.txt` to install other dependencies.
+- Use [requirements](english_app/requirements) to install other dependencies.
 ## Installation
 1. Clone the repository to your local machine: `git clone link`
 2. Navigate to the project directory: `cd English-Word-App`
