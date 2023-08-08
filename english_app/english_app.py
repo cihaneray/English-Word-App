@@ -224,7 +224,7 @@ class App:
             mean = self.sentence_list[word][1]
             # noinspection PyProtectedMember
             CTkMessagebox(title=f"{word.capitalize()}", message=f"Mean: {mean}\nSentence: {sentence}",
-                          icon="none", width=500, border_color="green").info._text_label.configure(wraplength=480)
+                          icon="check", width=500, border_color="green").info._text_label.configure(wraplength=480)
         else:
             pass
 
